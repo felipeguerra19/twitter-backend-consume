@@ -14,9 +14,9 @@ module.exports = [
         handler: (request, h) => {
             TweetModel.getDynamoDBTables(function(err, data) {
                 if(err) {
-                    h(err);
+                    return JSON.stringify(err);
                 }else {
-                    h(data);
+                    return JSON.stringify(data);
                 }
             });
         }
