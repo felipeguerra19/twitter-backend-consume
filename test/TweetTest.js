@@ -14,19 +14,18 @@ describe('TweetModel TestCases', function() {
         });
     });
 
-    describe('TweetModel::criarTabelas', () => {
-        it('Tem que dar erro na hora de criar as tabelas', function(done) {
-            TweetModel.criarTabelas(function(err, data) {
-                if(err) {
-                    console.log(err)
-                    expect(err).not.to.equal(null);
-                    done();
-                }else {
-                    assert.fail(data, null, JSON.stringify(data), null);
-                }
-            });
-        });
-    });
+    // describe('TweetModel::criarTabelas', () => {
+    //     it('Tem que dar erro na hora de criar as tabelas', function(done) {
+    //         TweetModel.criarTabelas(function(err, data) {
+    //             if(err) {
+    //                 expect(err).not.to.equal(null);
+    //                 done();
+    //             }else {
+    //                 assert.fail(data, null, JSON.stringify(data), null);
+    //             }
+    //         });
+    //     });
+    // });
 
     describe('TweetModel::gravarUsuariosESeguidores', () => {
         it('Tem que dar erro na hora de gravar', function(done) {
@@ -35,7 +34,7 @@ describe('TweetModel TestCases', function() {
                     expect(err).not.to.equal(null);
                     done();
                 }else {
-                    assert.fail(err, null, JSON.stringify(err), null);
+                    assert.fail(data, null, JSON.stringify(data), null);
                 }
             });
         });

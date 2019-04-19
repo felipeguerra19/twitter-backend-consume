@@ -57,4 +57,5 @@ const criarTabelas = (callback) => {
         }
     });
 }
+
 module.exports = { criarTabelas, gravarUsuariosESeguidores };

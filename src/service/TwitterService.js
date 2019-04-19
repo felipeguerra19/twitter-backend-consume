@@ -27,7 +27,7 @@ const pesquisarTweetsPorHashtag = (hashtag, callback) => {
         });
 
     }catch(e) {
-        console.error(e);
+        console.error('Erro ao tentar pesquisar os Tweets pela hashtag: ' + hashtag, e);
         callback(e, null);
     }
 };

@@ -8,11 +8,13 @@ const consultarTweets = (callback) => {
     //consulta todas as tags
     const hashtags = config['DEV'].hashtags;
     let tweets = [];
+    let err_api = null;
 
     for(let i=0; i<hashtags.length; i++) {
         TwitterService.pesquisarTweetsPorHashtag(hashtags[i], function(err, data) {
             if(err) {
-                throw err;
+                err_api = err;
+                return;
             }else {
                 //retira os caractéres que quebram o parsing
                 const re = new RegExp(/"'|'"/g, 'g')
@@ -22,7 +24,7 @@ const consultarTweets = (callback) => {
             }
         });
     }
-    callback(null, tweets);
+    callback(err_api, tweets);
 }
 
 module.exports = { consultarTweets };
