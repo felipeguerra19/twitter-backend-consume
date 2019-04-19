@@ -2,7 +2,16 @@
 
 const Joi = require('joi');
 const dynamodb = require('dynamodb');
-dynamodb.AWS.config.update({region: 'us-east-1'});
+
+let config = {};
+config['region'] = 'us-east-1';
+
+//Conexão local ao DynamoDB
+if( process.env.DYNAMODB_ENDPOINT ) {
+    config['endpoint'] = process.env.DYNAMODB_ENDPOINT;
+}
+
+dynamodb.AWS.config.update(config);
 
 //Usuario com mais seguidores;
 const User = dynamodb.define('User', {
