@@ -1,4 +1,4 @@
-const Boom = require('Boom');
+//const Boom = require('Boom');
 const TweetModel = require('../model/Tweet');
 
 module.exports = [
