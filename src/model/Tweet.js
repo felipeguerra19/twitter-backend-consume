@@ -13,6 +13,16 @@ if( process.env.DYNAMODB_ENDPOINT ) {
 
 dynamodb.AWS.config.update(config);
 
+const getDynamoDBTables = (callback) => {
+    dynamodb.listTables({}, function(err, data) {
+        if(err) {
+            callback(err, null);
+        }else {
+            callback(null, data);
+        }
+    }
+};
+
 //Usuario com mais seguidores;
 const User = dynamodb.define('User', {
     hashKey: 'Id',
@@ -67,4 +77,4 @@ const criarTabelas = (callback) => {
     });
 }
 
-module.exports = { criarTabelas, gravarUsuariosESeguidores };
+module.exports = { criarTabelas, gravarUsuariosESeguidores, getDynamoDBTables };
