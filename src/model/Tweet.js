@@ -20,7 +20,7 @@ const getDynamoDBTables = (callback) => {
         }else {
             callback(null, data);
         }
-    }
+    });
 };
 
 //Usuario com mais seguidores;
