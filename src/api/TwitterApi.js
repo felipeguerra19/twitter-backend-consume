@@ -2,7 +2,6 @@
 
 const Hapi = require('hapi');
 const routes = require('../route');
-const TweetModel = require('../model/Tweet');
 
 const init = async () => {
 

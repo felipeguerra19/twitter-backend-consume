@@ -1,3 +1,4 @@
+const TweetModel = require('../model/Tweet');
 
 module.exports = [
     {
