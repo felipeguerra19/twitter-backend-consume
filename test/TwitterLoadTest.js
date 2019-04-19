@@ -212,7 +212,6 @@ describe('Carregar e ler os tweets do arquivo', function() {
         })
     });
 
-
     describe('Faz o teste com o payload para map/reduce das hashtags de acordo com a localidade', function() {
         it('Agrupar os tweets por hashtag e localidade com sucesso', function(done) {
             try {
