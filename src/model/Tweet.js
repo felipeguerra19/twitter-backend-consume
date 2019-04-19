@@ -15,14 +15,8 @@ if( process.env.DYNAMODB_ENDPOINT ) {
 const dynamo = new AWS.DynamoDB(config);
 dynamodb.AWS.config.update(config);
 
-const getDynamoDBTables = (callback) => {
-    dynamo.listTables({}, function(err, data) {
-        if(err) {
-            callback(err, null);
-        }else {
-            callback(null, data);
-        }
-    });
+const getDynamoDBTables = async () => {
+    return await dynamo.listTables({});
 };
 
 //Usuario com mais seguidores;

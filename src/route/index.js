@@ -1,3 +1,4 @@
+const Boom = require('Boom');
 const TweetModel = require('../model/Tweet');
 
 module.exports = [
@@ -11,14 +12,12 @@ module.exports = [
     {
         method: 'GET',
         path:'/database-health',
-        handler: (request, h) => {
-            TweetModel.getDynamoDBTables(function(err, data) {
-                if(err) {
-                    return JSON.stringify(err);
-                }else {
-                    return JSON.stringify(data);
-                }
-            });
+        handler: async (request, h) => {
+            const result = await TweetModel.getDynamoDBTables();
+
+            return {
+                Tables: result.response.data
+            };
         }
     },
     {
