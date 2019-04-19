@@ -2,6 +2,7 @@
 
 const Joi = require('joi');
 const dynamodb = require('dynamodb');
+const AWS = require('aws-sdk');
 
 let config = {};
 config['region'] = 'us-east-1';
@@ -11,10 +12,11 @@ if( process.env.DYNAMODB_ENDPOINT ) {
     config['endpoint'] = process.env.DYNAMODB_ENDPOINT;
 }
 
+const dynamo = new AWS.DynamoDB(config);
 dynamodb.AWS.config.update(config);
 
 const getDynamoDBTables = (callback) => {
-    dynamodb.listTables({}, function(err, data) {
+    dynamo.listTables({}, function(err, data) {
         if(err) {
             callback(err, null);
         }else {
