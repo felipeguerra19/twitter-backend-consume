@@ -1,5 +1,6 @@
 //const Boom = require('Boom');
 const TweetModel = require('../model/Tweet');
+const TwitterConsume = require('../business/TwitterConsume');
 
 module.exports = [
     {
@@ -23,8 +24,12 @@ module.exports = [
     {
         method: 'GET',
         path:'/twitter-consumer/search-tweets',
-        handler: (request, h) => {
-            let param = request.params.hashtag;
+        handler: async (request, h) => {
+            await TwitterConsume.cadastrarUsuariosESeguidores();
+
+            return {
+                Status: 'Ok'
+            };
         }
     }
 ];
