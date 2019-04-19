@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Código-fonte do projeto que consome a API do Twitter para consulta de tweets",
   "scripts": {
-    "test": "mocha --timeout 20000"
+    "test": "mocha --timeout 5000"
   },
   "repository": {
     "type": "git",

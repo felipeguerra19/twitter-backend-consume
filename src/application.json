@@ -1,0 +1,31 @@
+{
+    "DEV": {
+        "hashtags": [
+            "openbanking",
+            "apifirst",
+            "devops",
+            "cloudfirst",
+            "microservices",
+            "apigateway",
+            "oauth",
+            "swagger",
+            "raml",
+            "openapis"
+        ]
+    },
+    "PROD": {
+        "hashtags": [
+            "openbanking",
+            "apifirst",
+            "devops",
+            "cloudfirst",
+            "microservices",
+            "apigateway",
+            "oauth",
+            "swagger",
+            "raml",
+            "openapis"
+        ]
+    }
+
+}

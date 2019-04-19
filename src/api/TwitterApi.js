@@ -1,7 +1,6 @@
 'use strict';
 
 const Hapi = require('hapi');
-const TwitterService = require('../service/TwitterService');
 
 const init = async () => {
 
